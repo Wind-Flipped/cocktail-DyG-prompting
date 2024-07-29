@@ -1,0 +1,14 @@
+[
+    {
+        "task": "When link",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to answer when two nodes are first connected in the dynamic graph.  two nodes are linked if there exists a temporal edge between them.",
+        "input": "Given an undirected dynamic graph with the edges [(0, 1, 1), (0, 2, 3), (0, 3, 2), (1, 2, 4), (1, 3, 4), (3, 4, 1)]. When are node 3 and node 0 linked? Give the answer as an integer number at the last of your response after 'Answer:' .If the answer does not exist, please respond with 'Answer: -1'.",
+        "output": "Answer: 2"
+    },
+    {
+        "task": "When link",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to answer when two nodes are first connected in the dynamic graph.  two nodes are linked if there exists a temporal edge between them.",
+        "input": "Given an undirected dynamic graph with the edges [(0, 1, 1), (0, 2, 3), (0, 3, 2), (1, 2, 4), (1, 3, 4), (3, 4, 1)]. When are node 4 and node 0 linked? Give the answer as an integer number at the last of your response after 'Answer:' .If the answer does not exist, please respond with 'Answer: -1'.",
+        "output": "Answer: -1"
+    }
+]

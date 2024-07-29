@@ -1,0 +1,14 @@
+[
+    {
+        "task": "When triadic closure",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to answer when when the three given nodes first form a closed triad. two nodes with a common neighbor are said to have a triadic closure, if they are linked since some time so that the three nodes have linked with each other to form a triad.",
+        "input": "Given an undirected dynamic graph with the edges [(0, 2, 1), (0, 4, 2), (1, 4, 2), (2, 4, 2)]. When are node 3,0 and 1 first close the triad? Give the answer as an integer number at the last of your response after 'Answer:'If the answer does not exist, please respond with 'Answer: -1'.",
+        "output": "Answer: -1"
+    },
+    {
+        "task": "When triadic closure",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to answer when when the three given nodes first form a closed triad. two nodes with a common neighbor are said to have a triadic closure, if they are linked since some time so that the three nodes have linked with each other to form a triad.",
+        "input": "Given an undirected dynamic graph with the edges [(0, 2, 1), (0, 4, 2), (1, 4, 2), (2, 4, 2)]. When are node 2,4 and 1 first close the triad? Give the answer as an integer number at the last of your response after 'Answer:'If the answer does not exist, please respond with 'Answer: -1'.",
+        "output": "Answer: -1"
+    }
+]

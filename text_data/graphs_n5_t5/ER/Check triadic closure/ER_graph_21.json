@@ -1,0 +1,14 @@
+[
+    {
+        "task": "Check triadic closure",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to answer whether the three given nodes form a closed triad. two nodes with a common neighbor are said to have a triadic closure, if they are linked since some time so that the three nodes have linked with each other to form a triad.",
+        "input": "Given an undirected dynamic graph with the edges [(1, 2, 0), (1, 3, 4), (1, 4, 3), (3, 4, 0)].  Did node 3,1 and 2 from a closed triad? Give the answer as 'Yes' or 'No' after 'Answer:'.",
+        "output": "Answer: No"
+    },
+    {
+        "task": "Check triadic closure",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to answer whether the three given nodes form a closed triad. two nodes with a common neighbor are said to have a triadic closure, if they are linked since some time so that the three nodes have linked with each other to form a triad.",
+        "input": "Given an undirected dynamic graph with the edges [(1, 2, 0), (1, 3, 4), (1, 4, 3), (3, 4, 0)].  Did node 4,1 and 2 from a closed triad? Give the answer as 'Yes' or 'No' after 'Answer:'.",
+        "output": "Answer: No"
+    }
+]

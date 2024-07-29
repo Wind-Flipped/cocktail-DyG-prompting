@@ -1,0 +1,14 @@
+[
+    {
+        "task": "Sort edge by time",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to  sort the edges by time from earliest to latest.",
+        "input": "Given an undirected dynamic graph with the edges [(0, 1, 2), (0, 2, 3), (0, 3, 2), (0, 4, 1)].  Sort the edges by time from earliest to latest. Give the answer as an array of (u, v, t) at the last of your response after 'Answer:'If the answer does not exist, please respond with 'Answer: []'.",
+        "output": "Answer: [(0, 4, 1), (0, 1, 2), (0, 3, 2), (0, 2, 3)]"
+    },
+    {
+        "task": "Sort edge by time",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to  sort the edges by time from earliest to latest.",
+        "input": "Given an undirected dynamic graph with the edges [(0, 1, 2), (0, 2, 3), (0, 3, 2), (0, 4, 1)].  Sort the edges by time from earliest to latest. Give the answer as an array of (u, v, t) at the last of your response after 'Answer:'If the answer does not exist, please respond with 'Answer: []'.",
+        "output": "Answer: [(0, 4, 1), (0, 1, 2), (0, 3, 2), (0, 2, 3)]"
+    }
+]

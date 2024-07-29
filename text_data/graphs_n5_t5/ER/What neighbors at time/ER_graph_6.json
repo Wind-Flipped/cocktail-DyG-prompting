@@ -1,0 +1,14 @@
+[
+    {
+        "task": "What neighbors at time",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to answer what nodes are linked with a given node at a given time.  two nodes are linked at a given time if there exists a temporal edge between them at the given time.",
+        "input": "Given an undirected dynamic graph with the edges [(0, 1, 2), (1, 3, 1), (2, 4, 2)]. What nodes are linked with node 0 at time 4 ? Give the answer as an array of integer number at the last of your response after 'Answer:'If the answer does not exist, please respond with 'Answer: []'.",
+        "output": "Answer: []"
+    },
+    {
+        "task": "What neighbors at time",
+        "instruction": "In an undirected dynamic graph, (u, v, t) means that node u and node v are linked with an undirected edge at time t.Your task is to answer what nodes are linked with a given node at a given time.  two nodes are linked at a given time if there exists a temporal edge between them at the given time.",
+        "input": "Given an undirected dynamic graph with the edges [(0, 1, 2), (1, 3, 1), (2, 4, 2)]. What nodes are linked with node 3 at time 0 ? Give the answer as an array of integer number at the last of your response after 'Answer:'If the answer does not exist, please respond with 'Answer: []'.",
+        "output": "Answer: []"
+    }
+]
