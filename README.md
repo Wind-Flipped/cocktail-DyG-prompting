@@ -24,4 +24,8 @@ Implement your own LLM class similar to the one in `api_LLM.py`  and `api.py`.  
 
 ### Step 2: Infer
 
+<<<<<<< HEAD
 Run `infer.py` to use different prompting template.  The COT parameter corresponds to different prompts.
+=======
+Run `infer.py` to use different prompting template.  The COT parameter corresponds to different prompts.
+>>>>>>> main/master
