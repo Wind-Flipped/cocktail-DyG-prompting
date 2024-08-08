@@ -549,7 +549,7 @@ def main():
 if __name__ == '__main__':
     # TODO
     model_name = "Llama3.1"
-    inferllm = InferLLM(api_key="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",
+    inferllm = InferLLM(api_key=" ",
                         model_name=model_name)
 
     start_time = time.time()

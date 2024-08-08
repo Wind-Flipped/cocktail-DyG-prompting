@@ -20,7 +20,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 class LLaMA3_LLM(LLM):
-    # 基于本地 llama3 自定义 LLM 类
+
     tokenizer: AutoTokenizer = None
     model: AutoModelForCausalLM = None
     history: List = []
@@ -28,7 +28,7 @@ class LLaMA3_LLM(LLM):
     def __init__(self, mode_name_or_path: str):
 
         super().__init__()
-        print("正在从本地加载模型...")
+        print("Download from local...")
         self.tokenizer = AutoTokenizer.from_pretrained(mode_name_or_path, use_fast=False)
         self.model = AutoModelForCausalLM.from_pretrained(mode_name_or_path,
                                                           device_map="auto")
@@ -36,7 +36,7 @@ class LLaMA3_LLM(LLM):
 
         self.history = []
 
-        print("完成本地模型的加载")
+        print("Complete")
 
     def build_input(self, prompt):
         user_format = '<|start_header_id|>user<|end_header_id|>\n\n{content}<|eot_id|>'
@@ -80,9 +80,9 @@ class LLaMA3_LLM(LLM):
     def _llm_type(self) -> str:
         return "LLaMA3_LLM"
 
-'''
+
 class Gemma2B(LLM):
-    # 基于本地 gemma2b 自定义 LLM 类
+
     tokenizer: AutoTokenizer = None
     model: AutoModelForCausalLM = None
     pipeline: pipeline = None
@@ -90,13 +90,13 @@ class Gemma2B(LLM):
 
     def __init__(self, model_name_or_path: str):
         super().__init__()
-        print("正在从本地加载模型...")
+        print("Download from local...")
         self.tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
         self.pipeline = pipeline("text-generation", model=model_name_or_path,
                                  model_kwargs={"torch_dtype": torch.bfloat16}, device="cuda")
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.history = []
-        print("完成本地模型的加载")
+        print("Complete")
 
     def build_input(self, prompt, role="user"):
 
@@ -139,23 +139,22 @@ class Gemma2B(LLM):
     def _llm_type(self) -> str:
         return "Gemma2B"
 
-'''
 
 class Qwen2_LLM(LLM):
-    # 基于本地 Qwen2 自定义 LLM 类
+
     tokenizer: AutoTokenizer = None
     model: AutoModelForCausalLM = None
     history: List = []
 
     def __init__(self, mode_name_or_path: str):
         super().__init__()
-        print("正在从本地加载模型...")
+        print("Download from local...")
         self.tokenizer = AutoTokenizer.from_pretrained(mode_name_or_path, use_fast=False)
         self.model = AutoModelForCausalLM.from_pretrained(mode_name_or_path,
                                                           device_map="auto")
         self.model.generation_config = GenerationConfig.from_pretrained(mode_name_or_path)
         self.history = []
-        print("完成本地模型的加载")
+        print("Complete")
 
     def clear_history(self):
         """
@@ -236,14 +235,14 @@ class Phi3Small_LLM(LLM):
 
     def __init__(self, mode_name_or_path: str):
         super().__init__()
-        print("正在从本地加载模型...")
+        print("Download from local...")
         self.tokenizer = AutoTokenizer.from_pretrained(mode_name_or_path, use_fast=False, trust_remote_code=True)
         self.model = AutoModelForCausalLM.from_pretrained(mode_name_or_path, device_map="auto", trust_remote_code=True, attn_implementation="flash_attention_2")
         self.model.generation_config = GenerationConfig.from_pretrained(mode_name_or_path)
         self.model.generation_config.pad_token_id = self.model.generation_config.eos_token_id
         self.model = self.model.eval()
         self.history = []
-        print("完成本地模型的加载")
+        print("Complete")
 
     def clear_history(self):
         """
@@ -280,7 +279,7 @@ class ChatGLM4_LLM(LLM):
 
     def __init__(self, mode_name_or_path: str, gen_kwargs: dict = None):
         super().__init__()
-        print("正在从本地加载模型...")
+        print("Download from local...")
         self.tokenizer = AutoTokenizer.from_pretrained(
             mode_name_or_path, trust_remote_code=True
         )
@@ -290,7 +289,7 @@ class ChatGLM4_LLM(LLM):
             trust_remote_code=True,
             device_map="auto"
         ).eval()
-        print("完成本地模型的加载")
+        print("Complete")
         self.history = []
 
         if gen_kwargs is None:
@@ -322,7 +321,6 @@ class ChatGLM4_LLM(LLM):
 
     @property
     def _identifying_params(self) -> dict[str, Any]:
-        """返回用于识别LLM的字典,这对于缓存和跟踪目的至关重要。"""
         return {
             "model_name": "glm-4-9b-chat",
             "max_length": self.gen_kwargs.get("max_length"),
@@ -335,20 +333,19 @@ class ChatGLM4_LLM(LLM):
         return "glm-4-9b-chat"
 
 class Vicuna_LLM(LLM):
-    # 基于本地 Qwen2 自定义 LLM 类
     tokenizer: AutoTokenizer = None
     model: AutoModelForCausalLM = None
     history: List = []
 
     def __init__(self, mode_name_or_path: str):
         super().__init__()
-        print("正在从本地加载模型...")
+        print("Download from local...")
         self.tokenizer = AutoTokenizer.from_pretrained(mode_name_or_path, use_fast=False)
         self.model = AutoModelForCausalLM.from_pretrained(mode_name_or_path,
                                                           device_map="auto")
         self.model.generation_config = GenerationConfig.from_pretrained(mode_name_or_path)
         self.history = []
-        print("完成本地模型的加载")
+        print("Conplete")
 
     def clear_history(self):
         """
