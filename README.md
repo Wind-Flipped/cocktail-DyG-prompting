@@ -28,3 +28,8 @@ Run the command below to use different prompting template.  The COT parameter co
 
 `python infer.py --model_name Llama3.1 --COT NO --api_key your_api_key`
 
+### Step 3: Evaluate
+
+Run the command below to get the accuracy rate.
+
+`python acc.py --model_name Llama3.1 --COT NO`
