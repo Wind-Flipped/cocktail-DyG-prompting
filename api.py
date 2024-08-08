@@ -87,7 +87,7 @@ class LLM_API(ApiLLM):
                 response = requests.post(
                     url=self.url,
                     headers={
-                        "Authorization": self.api_key,
+                        "Authorization": "Bearer " + self.api_key,
                     },
                     data=json.dumps({
                         "model": self.model_name,  # Optional
@@ -104,7 +104,6 @@ class LLM_API(ApiLLM):
             except Exception as e:
                 reply = ""
                 print("response---------------")
-                print(response)
                 print("Exception--------------")
                 print(e)
                 time.sleep(1)
@@ -114,7 +113,7 @@ class LLM_API(ApiLLM):
 
 if __name__ == '__main__':
     url = "https://Phi-3-small-8k-instruct-igoal.eastus2.models.ai.azure.com/v1/chat/completions"
-    api_key = "o6HUpXMyfPwiXv7Hu0CqLVyC5kWXwm7p"
+    api_key = ""
     api = ApiLLM(url=url, api_key=api_key)
     message = [{"role" : "user", "content": "Who are you?"}]
 

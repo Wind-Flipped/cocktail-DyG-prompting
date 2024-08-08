@@ -25,7 +25,8 @@ def match_answer(truth, answer, task):
         answer = answer.replace("Answer: ", "").replace(" ", "").replace("\n", "").replace("\t", "")
         return answer in truth
     else:
-        return preprocess_data(truth) == preprocess_data(answer)
+        # return preprocess_data(truth) == preprocess_data(answer)
+        return truth in answer
 
 
 def calculate_accuracy_for_file(file_path):
@@ -66,10 +67,12 @@ def calculate_accuracy_for_all_files(base_folder_path):
 
     return results
 
-
-function = ("EXPLAIN")
+# TODO
+function = ("ALL")
 graph = "graphs_n5_t10"
 model = ("Llama3.1")
+
+
 # 设置相对路径
 base_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),"output", model, graph, "ER"
                                 , function, "have_answer")
@@ -83,6 +86,8 @@ print("HAVE_ANSWER")
 for filename, zero, one in results:
     print(
         f"File: {filename:<50} Accuracy: zero: {zero * 100:6.2f}%  one: {one * 100:6.2f}%")
+
+
 
 # 设置相对路径
 base_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output", model, graph, "ER"
