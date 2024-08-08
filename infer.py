@@ -24,7 +24,10 @@ class InferLLM():
 
     def __init__(self, api_key, model_name):
         self.model_name = model_name
-        self.model_dict = {"Llama3.1": "meta-llama/llama-3.1-8b-instruct"}
+        self.model_dict = {"Llama3.1": "meta-llama/llama-3.1-8b-instruct",
+                           "Llama3.1-70b": "meta-llama/llama-3.1-70b-instruct",
+                           "Mistral": "mistralai/mistral-7b-instruct",
+                           "Claude3": "anthropic/claude-3-haiku"}
         self.llm = LLM(api_key=api_key, model_name=self.model_dict[model_name])
         self.no_explain_format = " Just output answer without any explanation!"
         self.output_format = self.no_explain_format
@@ -328,11 +331,21 @@ class InferLLM():
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="prompting")
+
+    parser.add_argument("--COT", default="NO", help="select the prompting")
+
+    parser.add_argument("-m", "--model_name", default="Llama3.1", help="Enter your model name")
+
+    parser.add_argument("--api_key", default=" ", help="Enter your model name")
+
+    args = parser.parse_args()
+
     # TODO
-    model_name = "Llama3.1"
+    model_name = args.model_name
     # TODO
     inferllm = InferLLM(api_key=" ",
-                        model_name=model_name)
+                        model_name=args.model_name)
 
     start_time = time.time()
     # TODO
@@ -340,7 +353,7 @@ if __name__ == '__main__':
     base_folder_path = "filter_text/" + graph + "/ER"
     base_output_path = "output/" + model_name + "/" + graph + "/ER"
     # TODO
-    COT = "NO"
+    COT = args.COT
     print(COT)
     if COT:
         base_output_path = base_output_path + "/" + COT
